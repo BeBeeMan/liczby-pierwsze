@@ -1,28 +1,52 @@
 #include <iostream>
-#include <string>
-#include <cctype>
 using namespace std;
 
 int main()
 {
-	string liczby = "test";
-	string done;
-	while (getline(cin, liczby))
+    int n;
+    int a;
+	int tab[100000];
+	int c=0;
+	int x;
+
+	cin >> n;
+	for (int k = 0; k < n; k++)
 	{
-		for (int i = 1; i < liczby.length(); i++)
+		cin >> a;
+		for (int i = 2; i < a; i++)
 		{
-			if (liczby[i - 1] == ' ')
+			if (a % i == 0)
 			{
-				liczby[i] = toupper(liczby[i]);
+				x = 0;
+				break;
+			}
+			else
+			{
+				x = 1;
 			}
 		}
-		for (int i = 0; i < liczby.length(); i++)
+		if (a == 1)
 		{
-			if (liczby[i] != ' ')
-			{
-				cout << liczby[i];
-			}
+			x = 0;
 		}
-		cout << endl;
+		if (a == 2)
+		{
+			x = 1;
+		}
+		tab[c] = x;
+		c++;
+	}
+	for (int i = 0; i < c; i++)
+	{
+		if (tab[i] == 0)
+		{
+			cout << "NIE\n";
+		}
+		else
+		{
+			cout << "TAK\n";
+		}
 	}
 }
+
+//https://pl.spoj.com/problems/PRIME_T/
