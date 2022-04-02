@@ -3,13 +3,13 @@ using namespace std;
 
 int main()
 { 
-    	int n;
-    	int a;
-	int tab[100000];
-	int c=0;
-	int x;
+    int n;
+    int a;
+    int tab[100000];
+    int c=0;
+    int x;
 
-	cin >> n;
+    cin >> n;
 	for (int k = 0; k < n; k++)
 	{
 		cin >> a;
